@@ -1,0 +1,55 @@
+<div class="container" style="margin-top:30px">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Đăng Ký Tài Khoản</strong></h3>
+                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#"></a></div>
+            </div>
+            <div class="panel-body">
+                <form role="form" action="/register" method="POST">
+              {{#if error_msg}}
+					<div class="alert alert-danger">
+                            <a class="close" data-dismiss="alert" href="#">×</a>{{error_msg}}
+                    </div>
+				{{/if}}
+                {{#if errors}}
+                    {{#each errors}}
+                        <div class="alert alert-danger">
+                            <a class="close" data-dismiss="alert" href="#">×</a>{{msg}}
+                        </div>
+                    {{/each}}
+                {{/if}}
+                    <div class="form-group">
+                        <input type="text" name="FullName" class="form-control " placeholder="Họ Tên" required>
+                    </div>
+                     <div class="form-group">
+                        <input type="text" name="Address" class="form-control " placeholder="Địa Chỉ" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="UserName" class="form-control " placeholder="Tên Đăng Nhập" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="Email" class="form-control " placeholder="Email" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="password" name="Password" class="form-control " placeholder="Mật Khẩu" required>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="password" name="ConfirmPassword" class="form-control " placeholder="Xác Nhận Mật Khẩu" required>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top:10px;margin-bottom:10px;">
+					<div class="col-md-12" style="text-align: right;">
+					 	<button type="submit" class="btn btn-info">Đăng Ký Ngay</button>
+						<button type="submit" class="btn btn-danger">Hủy Bỏ</button>
+					</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

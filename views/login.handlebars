@@ -1,0 +1,85 @@
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<div class="container">
+    <div class="omb_login">
+    	<h3 class="omb_authTitle">Đăng Nhập</h3>
+		<div class="row omb_row-sm-offset-3 omb_socialButtons">
+    	    <div class="col-xs-4 col-sm-2">
+		        <a href="#" onclick="ThongBao()" class="btn btn-lg btn-block omb_btn-facebook">
+			        <i class="fa fa-facebook visible-xs"></i>
+			        <span class="hidden-xs">Facebook</span>
+		        </a>
+	        </div>
+        	<div class="col-xs-4 col-sm-2">
+		        <a href="#" onclick="ThongBao()" class="btn btn-lg btn-block omb_btn-twitter">
+			        <i class="fa fa-twitter visible-xs"></i>
+			        <span class="hidden-xs">Twitter</span>
+		        </a>
+	        </div>	
+        	<div class="col-xs-4 col-sm-2">
+		        <a href="#" onclick="ThongBao()" class="btn btn-lg btn-block omb_btn-google">
+			        <i class="fa fa-google-plus visible-xs"></i>
+			        <span class="hidden-xs">Google+</span>
+		        </a>
+	        </div>	
+		</div>
+		<div class="row omb_row-sm-offset-3 omb_loginOr">
+			<div class="col-xs-12 col-sm-6">
+				<hr class="omb_hrOr">
+				<span class="omb_spanOr">Hoặc</span>
+			</div>
+		</div>
+		<div class="row omb_row-sm-offset-3">
+			<div class="col-xs-12 col-sm-6">	
+				{{#if success_msg}}
+					<div class="alert alert-success">
+                            <a class="close" data-dismiss="alert" href="#">×</a>{{success_msg}}
+                    </div>
+				{{/if}}
+				{{#if error}}
+					<div class="alert alert-danger">
+                            <a class="close" data-dismiss="alert" href="#">×</a>{{error}}
+                    </div>
+				{{/if}}
+			    <form class="omb_loginForm" action="" autocomplete="off" method="POST">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						<input type="text" class="form-control" name="username" placeholder="Tên đăng nhập" required>
+					</div>
+					<span class="help-block"></span>
+										
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+						<input  type="password" class="form-control" name="password" placeholder="Mật khẩu" required>
+					</div>
+                    <span class="help-block"></span>
+					 {{#if errors}}
+                    	{{#each errors}}
+                        	<span class="help-block">{{msg}}</span>
+                    	{{/each}}
+                	{{/if}}
+					
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Đăng Nhập</button>
+				</form>
+			</div>
+    	</div>
+		<div class="row omb_row-sm-offset-3">
+			<div class="col-xs-12 col-sm-3">
+				
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				<p class="omb_forgotPwd">
+					<a href="#" onclick="ThongBao()">Quên mật khẩu?</a>
+				</p>
+			</div>
+		</div>	    	
+	</div>
+</div>
+<script>
+    $(document).ready(function () {
+          toastr["warning"]("Lưu ý: Sau khi đăng nhập nếu không tiếp tục sử dụng vui lòng bấm vào Logout để thoát khỏi hệ thống. Không tắt trình duyệt. Lỗi này đang được tác giả cố gắng fix nhưng vì kiến thức hạn hẹp, bí kiếp chưa có nên cần phải có thời gian.")
+    });
+	function ThongBao()
+	{
+    	toastr["warning"]("Chức năng đang được hoàn thiện.")
+	}
+</script>
